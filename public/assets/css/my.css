@@ -7,6 +7,14 @@ footer{
     
 }
 
-@media(max-width: 599px){
-    
+.magnifying-glass{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-right: 0.5em;
+}
+@media(min-width: 768px){
+    .magnifying-glass{
+        display: none;
+    }
 }
