@@ -8,6 +8,14 @@ router.get('/', (req, res) => {
 
 router.get('/about', (req, res)=>{
     res.render('about-us')
+});
+
+router.get('/contacts', (req, res)=>{
+    res.render('contacts')
+});
+
+router.get('/search', (req, res)=>{
+    res.render('search')
 })
 
 module.exports = router;
