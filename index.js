@@ -6,6 +6,8 @@ const routes = require('./routes');
 
 const app = express();
 
+// require("bootstrap")
+
 require('./config/express')(app); 
 
 app.use(routes);

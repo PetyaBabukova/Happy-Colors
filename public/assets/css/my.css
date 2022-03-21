@@ -1,0 +1,12 @@
+.header-nav{
+    display: flex;
+}
+
+footer{
+    margin-top: 3%;
+    
+}
+
+@media(max-width: 599px){
+    
+}
