@@ -1,0 +1,34 @@
+<main>
+  {{>header}}
+  <!-- Start Error Area -->
+  <div class="maill-success">
+    <div class="d-table">
+      <div class="d-table-cell">
+        <div class="container">
+          <div class="success-content">
+            <i class="lni lni-envelope"></i>
+            <h2>Вашата поръчка е приета</h2>
+            <p>Благодарим ви. Поръчката ви ще бъде обработена при първа възможност. Възможно е да ви потърсим за допълнителни детайли, ако е необходимо.</p>
+            <div class="button">
+              <a href="/" class="btn">Начало</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Error Area -->
+
+  <!-- ========================= JS here ========================= -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function () {
+      window.setTimeout(fadeout, 500);
+    }
+
+    function fadeout() {
+      document.querySelector('.preloader').style.opacity = '0';
+      document.querySelector('.preloader').style.display = 'none';
+    }
+  </script>
+</main>

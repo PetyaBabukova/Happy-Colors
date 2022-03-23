@@ -2934,7 +2934,7 @@ ol {
     content: "";
     height: 100%;
     width: 100%;
-    background-color: #fff;
+    /* background-color: #fff; */
     opacity: 0.5;
   }
 }
@@ -2957,7 +2957,7 @@ ol {
   padding: 20px 365px 20px 50px;
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 38%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -6648,7 +6648,7 @@ blockquote span {
 }
 
 .checkout-steps-form-style-1 .single-checkbox {
-  margin-top: 15px;
+  margin-top: 5px;
 }
 
 .checkout-steps-form-style-1 .single-checkbox label {
@@ -6719,7 +6719,7 @@ blockquote span {
 
 .checkout-steps-form-style-1 .single-checkbox p {
   display: inline;
-  color: #777;
+  color: black;
   padding-left: 5px;
 }
 
@@ -7233,10 +7233,10 @@ blockquote span {
 
 .contact-us .contact-info .single-info-head {
   margin-top: 30px;
-  background-color: #f9f9f9;
-  padding: 30px;
-  border: 1px solid #eee;
-  border-radius: 4px;
+  /* background-color: #f9f9f9; */
+  /* padding: 30px; */
+  /* border: 1px solid #eee; */
+  /* border-radius: 4px; */
 }
 
 @media (max-width: 767px) {

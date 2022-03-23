@@ -46,8 +46,41 @@ a .magnifying-glass{
     margin-right: 0.5em;
 }
 
+body > main > div > div > div.row > div > div > div > div.col-lg-4.col-md-6.col-12 > div > div > a.btn.btn-alt{
+    text-transform: none;
+}
+
+body > main > div > div > div.cart-list-head > div.cart-single-list > div > div.col-lg-1.col-md-2.col-12{
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-steps-form-style-1 .form-default label{
+    color: black;
+    font-weight: bold;
+}
+
+.h6-payment-way-chackout-form{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 40px;
+    color: #0167F3;
+    margin-top: 1em;
+}
+
+.payment-way-check-box{
+    font-weight: bold;
+    color: black;
+    opacity: none;
+}
+
 @media(min-width: 768px){
     .magnifying-glass{
-        display: none;
+        display: none;  
+    }
+
+    .header .nav-social ul li a {
+       
+        border: none;
     }
 }
