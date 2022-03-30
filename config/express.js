@@ -1,8 +1,6 @@
 const express = require('express');
 const {engine} = require('express-handlebars');
 
-
-
 function setupExpress(app) {
     app.engine('hbs', engine({
         extname: 'hbs'
