@@ -4,10 +4,12 @@ const productService = require('../services/productService');
 const router = Router();
 
 router.get('/products', (req, res) => {
-    res.render('product-list', { title: 'Products' });
+    let products = productService.getAll();
+    
+    res.render('product-list', { title: 'Products', products});
 });
 
-router.get('/products/details', (req, res) => {
+router.get('/products/:id/details', (req, res) => {
     res.render('product-details', { title: 'Details' });
 });
 

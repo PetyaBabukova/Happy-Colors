@@ -8,18 +8,17 @@ function getAll() {
     return productsData;
 }
 
-
 function create(data){
     let product = new Product(
         uniqid(),
         data.name,
+        data.category,
         data.description,
         data.mainImageUrl,
         data.price
         );
 
         productsData.push(product);
-        console.log(productsData);
 
         //absolute path!
         fs.writeFile(__dirname + '/../config/products.json', JSON.stringify(productsData), (err)=>{

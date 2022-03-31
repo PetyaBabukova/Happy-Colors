@@ -1,16 +1,1 @@
-[
-    {
-        "id": "fbml3q0l1euixjl",
-        "name": "Doll",
-        "description": "Mery doll, with a winter coat, hat and handbag",
-        "mainImageUrl": "https://www.lovelycraft.com/wp-content/uploads/2021/12/Autumn-Crochet-Doll-Amigurumi-Free-Pattern-2.jpg",
-        "price": "654"
-    },
-    {
-        "id": "fbml1t8l1eupda7",
-        "name": "Flowers",
-        "description": "Simple flowers",
-        "mainImageUrl": "https://www.anniedesigncrochet.com/wp-content/uploads/2020/03/easy-crochet-flowers-1.jpg",
-        "price": "555"
-    }
-]
+[{"id":"fbml2bsl1evjter","name":"Кукла Сияна","description":"fghgfhgf","mainImageUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlcOZlY2LEeB_qXot6K2fp3NIdvU-PB3BQUg&usqp=CAU","category":"Dolls","price":"88"},{"id":"fbml6wsl1evljyg","name":"Кукла Мери","description":"Кукла с шапка, суичър и чантичка","mainImageUrl":"https://www.lovelycraft.com/wp-content/uploads/2021/12/Autumn-Crochet-Doll-Amigurumi-Free-Pattern-2.jpg","category":"Dolls","price":"999"},{"id":"fbml4q0l1evw550","name":"Животинки","description":"Различни малки животинки","mainImageUrl":"https://i.insider.com/60352a14bed5c50011a2c0c9?width=1136&format=jpeg","category":"Animals","price":"23"}]

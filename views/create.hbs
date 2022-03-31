@@ -2,18 +2,26 @@
     <h1 style="margin-left: 0.5em">Create</h1>
     <div class="create-form">
         <form action='/products/create' method="POST">
-            {{!-- <label for="name">Name</label> --}}
-            <input type="text" id="name" placeholder="Име" name="name">
-            {{!-- <label for="description">Description</label> --}}
+
+            <label for="name">Име:</label>
+            <input type="text" id="name" placeholder="Име" name="name"/>
+
+            <label for="category">Категория:</label>
+            <input type="text" id="category" placeholder="Категория" name="category"/>
+
+            <label for="description">Описание:</label>
             <textarea id="description" placeholder="Описание" name="description"></textarea>
-            {{!-- <label for="image">ImageUrl</label> --}}
+
+            <label for="image">Изображение:</label>
             <input type="text" id="imageMain" placeholder="imageUrl-Main" name="mainImageUrl">
+
             {{!-- <input type="text" id="image1" placeholder="imageUrl1" name="imageUrl">
             <input type="text" id="image2" placeholder="imageUrl2" name="imageUrl">
             <input type="text" id="image3" placeholder="imageUrl3" name="imageUrl">
             <input type="text" id="image4" placeholder="imageUrl4" name="imageUrl">
             <input type="text" id="image5" placeholder="imageUrl5" name="imageUrl"> --}}
-            <input type="number" id="price" placeholder="Цена" name="price">
+            <label for="price">Цена:</label>
+            <input type="number" id="price" placeholder="Цена" name="price"/>
             <input type="submit" value="Create">
         </form>
     </div>
