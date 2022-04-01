@@ -9,7 +9,7 @@ function getAll() {
     return productsData;
 }
 
-function create(data) {
+function create(data, callback) {
     let product = new Product(
         uniqid(),
         data.name,
@@ -22,12 +22,11 @@ function create(data) {
     productsData.push(product);
 
     //absolute path!
-    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), (err) => {
-        if (err) {
-            console.log(err);
-        };
-        return
-    })
+    fs.writeFile(
+        path.join(__dirname, '/../config/products.json'), 
+        JSON.stringify(productsData), 
+        callback
+        );
 };
 
 function getOne(id) {
