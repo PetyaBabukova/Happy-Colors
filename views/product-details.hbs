@@ -8,7 +8,7 @@
                         <div class="product-images">
                             <main id="gallery">
                                 <div class="main-img">
-                                    <img src="https://via.placeholder.com/1000x670" id="current" alt="#">
+                                    <img src="{{product.mainImageUrl}}" id="current" alt="#">
                                 </div>
                                 <div class="images">
                                     <img src="https://via.placeholder.com/1000x670" class="img" alt="#">
@@ -22,18 +22,15 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
                         <div class="product-info">
-                            <h2 class="title">GoPro Karma Camera Drone</h2>
-                            <p class="category"><i class="lni lni-tag"></i> Drones:<a href="javascript:void(0)">Action
-                                    cameras</a></p>
-                            <h3 class="price">$850<span>$945</span></h3>
-                            <p class="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
+                            <h2 class="title">{{product.name}}</h2>
+                            <p class="category"><i class="lni lni-tag"></i> {{product.category}}</a></p>
+                            <h3 class="price">{{product.price}} лв<span></span></h3>
+                            <p class="info-text">{{product.description}}</p>
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-12">
- 
+
                                 </div>
- 
+
                                 <div class="col-lg-4 col-md-4 col-12">
                                     <div class="form-group quantity">
                                         <label for="color">Quantity</label>
@@ -43,15 +40,22 @@
                             </div>
                             <div class="bottom-content">
                                 <div class="row align-items-end">
+
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="button cart-button">
-                                            <button class="btn" style="width: 100%;">Add to Cart</button>
+                                            <button class="btn" style="width: 100%;">Добави в количката</button>
                                         </div>
                                     </div>
- 
+
                                     <div class="col-lg-4 col-md-4 col-12">
                                         <div class="wish-button">
-                                            <button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
+                                            <button class="btn"><i class="lni lni-heart"></i> Добави в любими</button>
+                                        </div>
+                                    </div>
+
+                                     <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="wish-button">
+                                            <a href="/products" class="btn"><i class="lni lni-heart"></i> Галерия</a>
                                         </div>
                                     </div>
                                 </div>
@@ -65,18 +69,17 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="info-body custom-responsive-margin">
-                                <h4>Details</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                <h4>Допълнителна информация</h4>
+                                <p>{{product.description}}</p>
 
                             </div>
                         </div>
-  
+
                     </div>
                 </div>
-                <div class="row">
+
+                {{!-- Start reviews and stars --}}
+                {{!-- <div class="row">
                     <div class="col-lg-4 col-12">
                         <div class="single-block give-review">
                             <h4>4.5 (Overall)</h4>
@@ -196,7 +199,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
+                {{!-- End reviews and stars --}}
+
             </div>
         </div>
     </section>

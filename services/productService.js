@@ -1,6 +1,7 @@
 const uniqid = require('uniqid');
 const Product = require('../models/Product');
 const fs = require('fs');
+const path = require('path');
 
 let productsData = require('../config/products.json')
 
@@ -8,7 +9,7 @@ function getAll() {
     return productsData;
 }
 
-function create(data){
+function create(data) {
     let product = new Product(
         uniqid(),
         data.name,
@@ -16,20 +17,25 @@ function create(data){
         data.description,
         data.mainImageUrl,
         data.price
-        );
+    );
 
-        productsData.push(product);
+    productsData.push(product);
 
-        //absolute path!
-        fs.writeFile(__dirname + '/../config/products.json', JSON.stringify(productsData), (err)=>{
-            if (err) {
-                console.log(err);
-            };
-            return
-        })
+    //absolute path!
+    fs.writeFile(path.join(__dirname, '/../config/products.json'), JSON.stringify(productsData), (err) => {
+        if (err) {
+            console.log(err);
+        };
+        return
+    })
 };
+
+function getOne(id) {
+    return productsData.find(x => x.id == id);
+}
 
 module.exports = {
     getAll,
+    getOne,
     create
 }
