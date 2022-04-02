@@ -79,12 +79,12 @@
                         <div class="main-menu-search">
                             <!-- navbar search start -->
                             <div class="navbar-search search-style-5">
-                                <div class="search-input">
-                                    <input type="text" placeholder="Search">
-                                </div>
+                                <form style="display: flex;" action="/products" method="GET" class="search-input">
+                                    <input name="category" type="text" placeholder="Search">
                                 <div class="search-btn">
                                     <button><i class="lni lni-search-alt"></i></button>
                                 </div>
+                                </form>
                             </div>
                             <!-- navbar search Ends -->
                         </div>
@@ -193,14 +193,15 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Плетиво</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
-                                            <li class="nav-item"><a href="/products">Кукли</a></li>
-                                            <li class="nav-item"><a href="faq.html">Животни</a></li>
-                                            <li class="nav-item"><a href="faq.html">Шалове</a></li>
-                                            <li class="nav-item"><a href="faq.html">Шапки</a></li>
-                                            <li class="nav-item"><a href="login.html">Чанти</a></li>
-                                            <li class="nav-item"><a href="register.html">Панери</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Килими</a></li>
-                                            <li class="nav-item"><a href="404.html">Други</a></li>
+                                            <li class="nav-item"><a href="/products">Всички</a></li>
+                                            <li class="nav-item"><a href="/products/dolls">Кукли</a></li>
+                                            <li class="nav-item"><a href="/products/animals">Животни</a></li>
+                                            <li class="nav-item"><a href="/products/scarfs">Шалове</a></li>
+                                            <li class="nav-item"><a href="/products/hats">Шапки</a></li>
+                                            <li class="nav-item"><a href="/products/handbags">Чанти</a></li>
+                                            <li class="nav-item"><a href="/products/bowls">Панери</a></li>
+                                            <li class="nav-item"><a href="/products/carpets">Килими</a></li>
+                                            <li class="nav-item"><a href="/products/others">Други</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">

@@ -10,7 +10,6 @@ router.get('/products', (req, res) => {
     res.render('product-list', { title: 'Products', products });
 });
 
-
 router.get('/products/create', (req, res) => {
     res.render('create', { title: 'Create' })
 });
@@ -26,7 +25,5 @@ router.get('/products/:productId/details', (req, res) => {
     let product = productService.getOne(req.params.productId)
     res.render('product-details', { title: 'Details', product });
 });
-
-
 
 module.exports = router;

@@ -1,12 +1,10 @@
 const uniqid = require('uniqid');
 const Product = require('../models/Product');
-const fs = require('fs/promises');
-const path = require('path');
+const productData = require('../data/productData')
 
-let productsData = require('../config/products.json')
 
 function getAll() {
-    return productsData;
+    return productData.getAll();
 }
 
 function create(data) {
@@ -19,19 +17,13 @@ function create(data) {
         data.price
     );
 
-    productsData.push(product);
 
-    //absolute path!
-
-    return fs.writeFile(
-        path.join(__dirname, '/../config/products.json'),
-        JSON.stringify(productsData),
-
-    )
+    return productData.create(product)
 };
 
 function getOne(id) {
-    return productsData.find(x => x.id == id);
+   
+    return productData.getOne(id)
 }
 
 module.exports = {
