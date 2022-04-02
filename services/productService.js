@@ -4,7 +4,7 @@ const productData = require('../data/productData')
 
 
 function getAll() {
-    return productData.getAll();
+    return Product.getAll();
 }
 
 function create(data) {
@@ -16,14 +16,14 @@ function create(data) {
         data.mainImageUrl,
         data.price
     );
+        return product.save()
 
-
-    return productData.create(product)
+    // return productData.create(product)
 };
 
 function getOne(id) {
    
-    return productData.getOne(id)
+    return Product.getOne(id)
 }
 
 module.exports = {
