@@ -18,6 +18,16 @@ const productScheme = new mongoose.Schema({
         validate: /^https?/,
     },
 
+    imageUrl1: {
+        type: String,
+        validate: /^https?/,
+    },
+
+    imageUrl2: {
+        type: String,
+        validate: /^https?/,
+    },
+
     category: {
         type: String,
         required: true,

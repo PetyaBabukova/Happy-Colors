@@ -5,9 +5,12 @@ const { validateProduct } = require('./helpers/productHelpers')
 const router = Router();
 
 router.get('/products', (req, res) => {
-    let products = productService.getAll();
+    productService.getAll()
+    .then(products => {
+        res.render('product-list', { title: 'Products', products });
+    })
+    .catch(()=> res.status(500).end()) 
 
-    res.render('product-list', { title: 'Products', products });
 });
 
 router.get('/products/create', (req, res) => {
@@ -20,10 +23,11 @@ router.post('/products/create', validateProduct, (req, res) => {
     .catch(()=> res.status(500).end()) 
 });
 
-router.get('/products/:productId/details', (req, res) => { 
+router.get('/products/:productId/details', async (req, res) => { 
     // console.log(req.params.productId);
-    let product = productService.getOne(req.params.productId)
-    res.render('product-details', { title: 'Details', product });
+    let product = await productService.getOne(req.params.productId)
+    res.render('product-details', { title: 'Details', product })
+    
 });
 
 module.exports = router;

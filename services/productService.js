@@ -1,19 +1,21 @@
 const Product = require('../models/Product');
-const productData= require('../data/productData')
 
-function getAll() {
-    return productData.getAll();
+async function getAll() {
+    let products = await Product.find({}).lean();
+    // console.log(products);
+    return products;
+
 }
 
 function create(data) {
     let product = new Product(data);
-    
-    // return productData.create(product)
     return product.save();
 };
 
-function getOne(id) {
-   return productData.getOne()
+async function getOne(_id) {
+    let product = await Product.findById(_id).lean();
+    
+    return product;
 }
 
 module.exports = {
