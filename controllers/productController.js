@@ -7,14 +7,14 @@ const router = Router();
 router.get('/products', (req, res) => {
     productService.getAll()
     .then(products => {
-        res.render('product-list', { title: 'Products', products });
+        res.render('list', { title: 'Products', products });
     })
     .catch(()=> res.status(500).end()) 
 
 });
 
 router.get('/products/create', (req, res) => {
-    res.render('create', { title: 'Create' })
+    res.render('createProduct', { title: 'Create Product' })
 });
 
 router.post('/products/create', validateProduct, (req, res) => {
@@ -26,7 +26,7 @@ router.post('/products/create', validateProduct, (req, res) => {
 router.get('/products/:productId/details', async (req, res) => { 
     // console.log(req.params.productId);
     let product = await productService.getOne(req.params.productId)
-    res.render('product-details', { title: 'Details', product })
+    res.render('details', { title: 'Details', product })
     
 });
 

@@ -3,7 +3,7 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/', (req, res)=>{
-    // res.redirect('/home')
+    res.redirect('/home')
     res.render('home', { title: 'Happy Colors' });
 })
 
@@ -25,6 +25,10 @@ router.get('/search', (req, res)=>{
 
 router.get('/order-success', (req, res) => {
     res.render('mail-success');
+});
+
+router.get('/admin', (req, res) => {
+    res.render('adminPanel', {title: 'Admin'});
 });
 
 
