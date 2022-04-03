@@ -20,7 +20,7 @@ router.post('/products/create', validateProduct, (req, res) => {
     .catch(()=> res.status(500).end()) 
 });
 
-router.get('/products/:productId/details', (req, res) => {
+router.get('/products/:productId/details', (req, res) => { 
     // console.log(req.params.productId);
     let product = productService.getOne(req.params.productId)
     res.render('product-details', { title: 'Details', product });

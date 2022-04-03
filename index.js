@@ -1,5 +1,4 @@
 const express = require('express');
-const {engine} = require('express-handlebars');
 
 const config = require('./config/config');
 const routes = require('./routes');
@@ -8,7 +7,8 @@ const app = express();
 
 // require("bootstrap")
 
-require('./config/express')(app); 
+require('./config/express')(app);
+require('./config/mongoose')(app);
 
 app.use(routes);
 

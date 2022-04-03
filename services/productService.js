@@ -1,29 +1,19 @@
-const uniqid = require('uniqid');
 const Product = require('../models/Product');
-const productData = require('../data/productData')
-
+const productData= require('../data/productData')
 
 function getAll() {
-    return Product.getAll();
+    return productData.getAll();
 }
 
 function create(data) {
-    let product = new Product(
-        uniqid(),
-        data.name,
-        data.category,
-        data.description,
-        data.mainImageUrl,
-        data.price
-    );
-        return product.save()
-
+    let product = new Product(data);
+    
     // return productData.create(product)
+    return product.save();
 };
 
 function getOne(id) {
-   
-    return Product.getOne(id)
+   return productData.getOne()
 }
 
 module.exports = {

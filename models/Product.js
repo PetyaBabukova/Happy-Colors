@@ -1,17 +1,40 @@
-const fs = require('fs/promises');
-const path = require('path');
-let productsDb = require('../config/products.json');
-const Model = require('./Model');
+const mongoose = require('mongoose');
 
-class Product extends Model {
-    constructor(id, name, category, description, mainImageUrl, price) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.mainImageUrl = mainImageUrl;
-        this.category = category;
-        this.price = price;
-    }
-}
+const productScheme = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
 
-module.exports = Product;
+    description: {
+        type: String,
+        required: true,
+        maxlength: 50
+    },
+
+    mainImageUrl: {
+        type: String,
+        required: true,
+        validate: /^https?/,
+    },
+
+    category: {
+        type: String,
+        required: true,
+    },
+
+    price: {
+        type: Number,
+        required: true,
+        min: 0.5
+
+    },
+
+    accessories: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Accessory'         
+    }]
+});
+
+
+module.exports = mongoose.model('Product', productScheme);
