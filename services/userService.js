@@ -1,8 +1,8 @@
 const User = require('../models/User');
 
 function create(data) {
-    let name = new User(data);
-    return User;
+    let user = new User(data);
+    return user.save();
 }
 
 function getData(data) {

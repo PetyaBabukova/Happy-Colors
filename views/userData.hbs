@@ -12,40 +12,85 @@
                                 <section class="checkout-steps-form-content collapse show" id="collapseThree"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <h6 class="h6-payment-way-chackout-form">Вашите данни</h6>
-                                    <form action="s.babukov@gmail.com" method="POST" class="row">
+                                    <form action="/userdata" method="POST" class="row">
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <p>Потребителско име: {{user.name}} {{user.surname}}</p>
+                                                <label>Потребителско име</label>
+                                                <div class="row">
+                                                    <div class="col-md-6 form-input form">
+                                                        <input name="name" type="text" autocomplete="on"
+                                                            value="{{user.name}}">
+                                                    </div>
+                                                    <div class="col-md-6 form-input form">
+                                                        <input name="surname" type="text" autocomplete="on"
+                                                            value="{{user.surname}}">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="single-form form-default">
-                                                <p>Е-mail: {{user.email}}</p>
+                                                <label>Е-mail</label>
+                                                <div class="form-input form">
+                                                    <input name="email" type="text" autocomplete="on"
+                                                        value="{{user.email}}">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="single-form form-default">
-                                                <p>Телефон за контакт: {{user.phone}}</p>
+                                                <label>Телефон за контакт</label>
+                                                <div class="form-input form">
+                                                    <input name="phone" type="text" autocomplete="on"
+                                                        value="{{user.phone}}">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <p>Адрес за доставка: {{user.city}} {{user.zipCode}} {{user.address}}
-                                                </p>
-
+                                                <label>Пълен адрес за доставка (или адрес на офис на куриерска
+                                                    фирма)</label>
+                                                <div class="form-input form">
+                                                    <input name="address" type="text" autocomplete="on"
+                                                        value="{{user.address}}">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <h6 class="h6-payment-way-chackout-form">Начин на плащане: {{user.payment-method}}</h6>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Начин на плащане</label>
+                                                <div class="form-input form">
+                                                    <input name="paymentMethod" type="text" autocomplete="on"
+                                                        value="{{user.payment-method}}">
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form button">
                                                 <button class="btn" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="false"
                                                     aria-controls="collapseFour">продължи</button>
+
+
                                             </div>
+
                                         </div>
                                     </form>
+                                    <form action="/user/checkout" method="GET" class="row">
+                                        <div class="col-md-12">
+                                            <div class="single-form button">
+                                                <button class="btn" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                                    aria-controls="collapseFour">назад</button>
+
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+
+
                                 </section>
                             </li>
 
@@ -57,5 +102,124 @@
         </div>
     </section>
     <!--====== Checkout Form Steps Part Ends ======-->
+
+
+    <main>
+
+        <!--====== Checkout Form Steps Part Start ======-->
+
+        <section class="checkout-wrapper section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="checkout-steps-form-style-1">
+                            <ul id="accordionExample">
+                                <li>
+                                    <form action="/userdata" method="GET"
+                                        class="checkout-steps-form-content collapse show" id="collapseThree"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <h6 class="h6-payment-way-chackout-form">Вашите данни</h6>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="single-form form-default">
+                                                    <label>Потребителско име</label>
+                                                    <div class="row">
+                                                        <div class="col-md-6 form-input form">
+                                                            <input name="name" type="text" autocomplete="on"
+                                                                value="{{user.name}}">
+                                                        </div>
+                                                        <div class="col-md-6 form-input form">
+                                                            <input name="surname" type="text" autocomplete="on"
+                                                                value="{{user.name}}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="single-form form-default">
+                                                    <label>Е-mail</label>
+                                                    <div class="form-input form">
+                                                        <input name="email" type="text" autocomplete="on"
+                                                            value="{{user.email}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="single-form form-default">
+                                                    <label>Телефон за контакт</label>
+                                                    <div class="form-input form">
+                                                        <input name="phone" type="text" autocomplete="on"
+                                                            value="{{user.phone}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="single-form form-default">
+                                                    <label>Пълен адрес за доставка (или адрес на офис на куриерска
+                                                        фирма)</label>
+                                                    <div class="form-input form">
+                                                        <input name="address" type="text" autocomplete="on"
+                                                            value="{{user.address}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="single-form form-default">
+                                                    <label>Начин на плащане</label>
+                                                    <div class="form-input form">
+                                                        <input name="phone" type="text" autocomplete="on"
+                                                            value="{{user.payment-method}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="col-md-12">
+                                                <h6 class="h6-payment-way-chackout-form">Начин на плащане</h6>
+                                                <div class="single-checkbox checkbox-style-3 payment-way-check-box">
+                                                    <input type="radio" id="cashOnDelivery" name="payment-method"
+                                                        value="cashOnDelivery">
+                                                    <p>Наложен платеж</p>
+                                                </div>
+                                                <div class="single-checkbox checkbox-style-3 payment-way-check-box">
+                                                    <input type="radio" id="bankTransfer" name="payment-method"
+                                                        value="bankTransfer">
+                                                    <p>Банков превод: IBAN......</p>
+                                                </div>
+                                                <div class="single-checkbox checkbox-style-3 payment-way-check-box">
+                                                    <input type="radio" id="electronicWallet" name="payment-method"
+                                                        value="electronicWallet">
+                                                    <p>Електронен портфейл</p>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="single-form button">
+                                                <button type="submit" class="btn" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                                    aria-controls="collapseFour">продължи</button>
+                                            </div>
+                                        </div>
+                        </div>
+                        </form>
+                        </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+        </section>
+        <!--====== Checkout Form Steps Part Ends ======-->
+
+    </main>
 
 </main>

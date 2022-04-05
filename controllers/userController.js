@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const userService = require('../services/userService')
+const userService = require('../services/userService');
 
 const router = Router();
 
@@ -8,13 +8,24 @@ router.get('/user/checkout', (req, res) => {
 });
 
 router.get('/userdata',(req, res)=>{
-    res.render('userData')
+    // console.log(req.query);
+    res.render('userData', {title: 'User Data', user: req.query})
 })
 
 router.post('/user/checkout', async (req, res)=>{
     let user = await userService.getData(req.body)
     res.render('userData', {title: 'User Data', user})
 })
+
+router.post('/userdata', (req, res)=>{
+    console.log(req.body);
+    res.end()
+})
+
+// router.post('/shoppingconformation', (req, res)=>{
+//     console.log(req.body);
+//     res.end()
+// })
 
 
 module.exports = router;
