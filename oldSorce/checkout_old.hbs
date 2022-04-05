@@ -1,7 +1,4 @@
-<main>
-
     <!--====== Checkout Form Steps Part Start ======-->
-
     <section class="checkout-wrapper section">
         <div class="container">
             <div class="row justify-content-center">
@@ -9,10 +6,10 @@
                     <div class="checkout-steps-form-style-1">
                         <ul id="accordionExample">
                             <li>
-                                <form action="/user/checkout" method="POST" class="checkout-steps-form-content collapse show" id="collapseThree"
+                                <section class="checkout-steps-form-content collapse show" id="collapseThree"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <h6 class="h6-payment-way-chackout-form">Вашите данни</h6>
-                                    <div class="row">
+                                <h6 class="h6-payment-way-chackout-form">Вашите данни</h6>
+                                    <form action="/user/checkout" method="POST" class="row">
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
                                                 <label>Потребителско име</label>
@@ -44,53 +41,58 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="single-form form-default">
-                                                <label>Пълен адрес за доставка (или адрес на офис на куриерска
-                                                    фирма)</label>
+                                                <label>Адрес за доставка (или адрес на офис на куриерска фирма)</label>
                                                 <div class="form-input form">
                                                     <input name="address" type="text" placeholder="адрес">
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Град</label>
+                                                <div class="form-input form">
+                                                    <input name="city" type="text" placeholder="град">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <label>Пощенски код</label>
+                                                <div class="form-input form">
+                                                    <input name="zipCode" type="text" placeholder="пощенски код">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
                                         <div class="col-md-12">
                                             <h6 class="h6-payment-way-chackout-form">Начин на плащане</h6>
                                             <div class="single-checkbox checkbox-style-3 payment-way-check-box">
-                                                <input type="radio" id="cashOnDelivery" name="payment-method"
-                                                    value="cashOnDelivery">
-                                                <p>Наложен платеж</p>
+                                                <input name="cashOnDelivery" type="checkbox" id="checkbox-3">
+                                                <label for="checkbox-3"><span></span></label>
+                                                <p>С наложен платеж</p>
                                             </div>
                                             <div class="single-checkbox checkbox-style-3 payment-way-check-box">
-                                                <input type="radio" id="bankTransfer" name="payment-method" value="bankTransfer">
+                                                <input name="bankTranspher" type="checkbox" id="checkbox-3">
+                                                <label for="checkbox-3"><span></span></label>
                                                 <p>Банков превод: IBAN......</p>
                                             </div>
-                                            <div class="single-checkbox checkbox-style-3 payment-way-check-box">
-                                                <input type="radio" id="electronicWallet" name="payment-method" value="electronicWallet">
-                                                <p>Електронен портфейл</p>
-                                            </div>
-
-                                            
                                         </div>
-                                        </div>
-
-
                                         <div class="col-md-12">
                                             <div class="single-form button">
-                                                <button type="submit" class="btn" data-bs-toggle="collapse"
+                                                <button class="btn" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseFour" aria-expanded="false"
                                                     aria-controls="collapseFour">продължи</button>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </section>
                             </li>
-
+ 
                         </ul>
                     </div>
                 </div>
-
+ 
             </div>
         </div>
     </section>
     <!--====== Checkout Form Steps Part Ends ======-->
-
-</main>

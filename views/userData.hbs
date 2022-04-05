@@ -1,0 +1,61 @@
+<main>
+
+    <!--====== Checkout Form Steps Part Start ======-->
+
+    <section class="checkout-wrapper section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="checkout-steps-form-style-1">
+                        <ul id="accordionExample">
+                            <li>
+                                <section class="checkout-steps-form-content collapse show" id="collapseThree"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <h6 class="h6-payment-way-chackout-form">Вашите данни</h6>
+                                    <form action="s.babukov@gmail.com" method="POST" class="row">
+                                        <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <p>Потребителско име: {{user.name}} {{user.surname}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <p>Е-mail: {{user.email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="single-form form-default">
+                                                <p>Телефон за контакт: {{user.phone}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="single-form form-default">
+                                                <p>Адрес за доставка: {{user.city}} {{user.zipCode}} {{user.address}}
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h6 class="h6-payment-way-chackout-form">Начин на плащане: {{user.payment-method}}</h6>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="single-form button">
+                                                <button class="btn" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseFour" aria-expanded="false"
+                                                    aria-controls="collapseFour">продължи</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </section>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--====== Checkout Form Steps Part Ends ======-->
+
+</main>
