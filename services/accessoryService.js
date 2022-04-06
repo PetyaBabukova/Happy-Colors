@@ -6,6 +6,14 @@ function create(data) {
     return accessory.save();
 }
 
+async function getAll() {
+    let accessories = await Accessory.find({}).lean();
+    return accessories;
+
+}
+
+
 module.exports = {
     create,
+    getAll,
 }

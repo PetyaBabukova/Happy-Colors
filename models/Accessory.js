@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const accessoryScheme = new mongoose.Schema({
     id: mongoose.Types.ObjectId,
     name: String,
-    imageUrl: String,
+    mainImageUrl: String,
     description: String,
 });
 

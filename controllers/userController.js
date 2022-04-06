@@ -4,7 +4,7 @@ const userService = require('../services/userService');
 const router = Router();
 
 router.get('/user/checkout', (req, res) => {
-    res.render('checkout');
+    res.render('checkout',  {title: 'Checkout'});
 });
 
 router.get('/userdata',(req, res)=>{

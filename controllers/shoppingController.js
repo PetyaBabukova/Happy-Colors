@@ -7,7 +7,7 @@ router.get('/shopping/cart', (req, res) => {
 });
 
 router.get('/shopping/checkout', (req, res) => {
-    res.render('checkout');
+    res.render('checkout', {title: 'Checkout'});
 });
 
 module.exports = router;

@@ -30,4 +30,10 @@ router.get('/products/:productId/details', async (req, res) => {
     
 });
 
+router.post('/products/:productId/details', (req, res)=>{
+    console.log(req.body);
+})
+
+
+
 module.exports = router;
