@@ -16,13 +16,13 @@ const userScheme = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        validate: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        // validate: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     },
 
    phone: {
-        type: Number,
+        type: String,
         required: true,
-        validate: /[0-9]{10}/
+        // validate: /[0-9]{10}/
     },
 
     address:{
@@ -30,15 +30,10 @@ const userScheme = new mongoose.Schema({
         required: true,
     },
 
-    city:{
-        type: String,
-        required: true,
-    },
-
-    zipCode:{
-        type: Number,
-        required: true,
-    },
+    cart: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Product'
+    }]
 });
 
 userScheme.methods.connectData = function(){

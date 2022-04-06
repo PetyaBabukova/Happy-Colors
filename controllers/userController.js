@@ -18,8 +18,11 @@ router.post('/user/checkout', async (req, res)=>{
 })
 
 router.post('/userdata', (req, res)=>{
-    console.log(req.body);
-    res.end()
+    // console.log(req.body);
+    // res.end()
+    userService.create(req.body)
+    .then(() =>res.redirect('/products'))
+    
 })
 
 // router.post('/shoppingconformation', (req, res)=>{
