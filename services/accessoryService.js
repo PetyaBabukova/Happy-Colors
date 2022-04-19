@@ -8,10 +8,10 @@ function create(data) {
 
 async function getAll() {
     let accessories = await Accessory.find({}).lean();
+
     return accessories;
 
 }
-
 
 module.exports = {
     create,

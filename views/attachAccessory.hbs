@@ -1,0 +1,78 @@
+<main>
+    <div class="form">
+        <!-- Start Item Details -->
+        <section class="item-details section">
+            <div class="container">
+                <div class="top-area">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="product-images">
+                                <main id="gallery">
+                                    <div class="main-img">
+                                        <img src="{{product.mainImageUrl}}" id="current" alt="#">
+                                    </div>
+                                    {{!-- Start Accessories Galery --}}
+                                    <h5>Аксесоари</h5>
+                                    <div class="images">
+                                        <img src="https://i0.wp.com/hookedonpatterns.com/wp-content/uploads/2019/08/Learn-How-To-Crochet-Post-Featured-Image.jpg?fit=1100%2C476&ssl=1"
+                                            class="img" alt="#">
+                                    </div>
+                                    <p>Този продукт все още няма аксесоари</p>
+                                    {{!-- End Accessories Galery --}}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="product-info">
+                                <h2 class="title">{{product.name}}</h2>
+                                {{!-- <p class="category"><i class="lni lni-tag"></i> {{product.category}}</a></p> --}}
+                                <h3 class="price">{{product.price}} лв<span></span></h3>
+                                <p class="info-text">{{product.description}}</p>
+                            </div>
+
+                            <div class="product-info">
+                                <h2 class="title">Attach Accessory</h2>
+                                <form action="/products/{{product._id}}/attach" method="POST">
+                                    <label for="accessory">Accessories</label>
+                                    <select id="accessory" name="accessory">
+                                        {{#each accessories}}
+                                        <option value="{{_id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                    
+                                    <input type="submit" value="Attach">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
+
+<!-- End Item Details -->
+
+
+
+
+
+
+<script type="text/javascript">
+    const current = document.getElementById("current");
+    const opacity = 0.6;
+    const imgs = document.querySelectorAll(".img");
+    imgs.forEach(img => {
+        img.addEventListener("click", (e) => {
+            //reset opacity
+            imgs.forEach(img => {
+                img.style.opacity = 1;
+            });
+            current.src = e.target.src;
+            //adding class 
+            //current.classList.add("fade-in");
+            //opacity
+            e.target.style.opacity = opacity;
+        });
+    });
+</script>
+
+</main>
