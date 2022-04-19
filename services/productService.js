@@ -20,6 +20,12 @@ async function getOne(_id) {
     return product;
 }
 
+function getOneWithAccessories(id) {
+    return Product.findById(id)
+    .populate('accessories')
+    .lean()
+}
+
 async function attachAccessory(productId, accessoryId) {
     let product = await Product.findById(productId);
     let accessory = await Accessory.findById(accessoryId)
@@ -33,5 +39,6 @@ module.exports = {
     getOne,
     create,
     attachAccessory,
+    getOneWithAccessories,
     
 }

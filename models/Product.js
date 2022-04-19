@@ -42,7 +42,7 @@ const productScheme = new mongoose.Schema({
 
     accessories: [{
         type: mongoose.Types.ObjectId,
-        ref: 'Accessory'         
+        ref: 'Accessory'   
     }]
 });
 

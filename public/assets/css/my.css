@@ -98,6 +98,10 @@ body > main > div > div > div.cart-list-head > div.cart-single-list > div > div.
     margin-bottom: 1em;
 }
 
+.accessory-container{
+    width: 50%;
+}
+
 @media(min-width: 768px){
     .magnifying-glass{
         display: none;  

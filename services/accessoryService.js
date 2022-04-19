@@ -13,7 +13,12 @@ async function getAll() {
 
 }
 
+async function getOne(_id) {
+    return await Accessory.findById(_id).lean();
+}
+
 module.exports = {
     create,
     getAll,
+    getOne,
 }

@@ -1,0 +1,87 @@
+<main>
+    <!-- Start Item Details -->
+    <section class="item-details section">
+        <div class="container">
+            <div class="top-area">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-images">
+                            <main id="gallery">
+                                <div class="main-img">
+                                    <img src="{{mainImageUrl}}" id="current" alt="accessory image">
+                                </div>
+                               
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
+                        <div class="product-info">
+                            <h2 class="title">{{name}}</h2>
+                            {{!-- <p class="category"><i class="lni lni-tag"></i> {{product.category}}</a></p> --}}
+                            <h3 class="price">{{price}} лв<span></span></h3>
+                            <p class="info-text">{{description}}</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-12">
+
+                                </div>
+
+                                <div class="col-lg-4 col-md-4 col-12">
+                                    <div class="form-group quantity">
+                                        <label for="color">Quantity</label>
+                                        <input type="number" class="form-control"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-content">
+                                <div class="row align-items-end">
+
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <a href="/shopping/cart" class="button cart-button">
+                                            <button class="btn" style="width: 100%;">Добави в количката</button>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="wish-button">
+                                            <button class="btn"><i class="lni lni-heart"></i> Добави в любими</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="wish-button">
+                                            <a href="/products" class="btn"><i class="lni lni-heart"></i> Галерия</a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- End Item Details -->
+
+
+
+    <script type="text/javascript">
+        const current = document.getElementById("current");
+        const opacity = 0.6;
+        const imgs = document.querySelectorAll(".img");
+        imgs.forEach(img => {
+            img.addEventListener("click", (e) => {
+                //reset opacity
+                imgs.forEach(img => {
+                    img.style.opacity = 1;
+                });
+                current.src = e.target.src;
+                //adding class 
+                //current.classList.add("fade-in");
+                //opacity
+                e.target.style.opacity = opacity;
+            });
+        });
+    </script>
+</main>

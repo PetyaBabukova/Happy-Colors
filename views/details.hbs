@@ -19,11 +19,11 @@
                                 {{!-- Start Accessories Galery --}}
                                 <h5>Аксесоари</h5>
                                 <div class="images">
-                                    <img src="https://i0.wp.com/hookedonpatterns.com/wp-content/uploads/2019/08/Learn-How-To-Crochet-Post-Featured-Image.jpg?fit=1100%2C476&ssl=1"
-                                        class="img" alt="#">
+                                {{#each product.accessories}}
+                                    {{>accessory}}
+                                {{/each}}
                                 </div>
                                 {{!-- End Accessories Galery --}}
-                            </main>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-12">
@@ -64,6 +64,13 @@
                                             <a href="/products" class="btn"><i class="lni lni-heart"></i> Галерия</a>
                                         </div>
                                     </div>
+
+                                    {{!-- <div class="col-lg-4 col-md-4 col-12">
+                                        <div class="wish-button">
+                                            <a href="/products/{{product._id}}/attach" class="btn"><i
+                                                    class="lni lni-heart"></i> Добави аксесоар</a>
+                                        </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

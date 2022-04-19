@@ -1,9 +1,21 @@
+{{!-- <div class="images">
+    <img src="{{accessories.mainImageUrl}}"
+        class="img" alt="#">
+</div> --}}
+
+
+
 <div>
+    <a href="/accessories/{{_id}}/accessoryDetails">
+
     <div class="accessory-container">
         <div class="accessory-image-container">
-            <img src="{{accessory.mainImageUrl}}" alt="accessory image">
+            <img src="{{mainImageUrl}}" alt="accessory image">
         </div>
-        <p>{{accessory.name}}</p>
-        <p>{{accessory._id}}</p>
+        
+        <p>{{name}}</p> 
+       
     </div>
+    </a>
 </div>
+        {{!-- <p>{{_id}}</p> --}}

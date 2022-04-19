@@ -5,6 +5,7 @@ const accessoryScheme = new mongoose.Schema({
     name: String,
     mainImageUrl: String,
     description: String,
+    price: Number
 });
 
 

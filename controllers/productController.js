@@ -27,7 +27,9 @@ router.post('/products/create', (req, res) => {
 
 router.get('/products/:productId/details', async (req, res) => { 
     // console.log(req.params.productId);
-    let product = await productService.getOne(req.params.productId)
+    let product = await productService.getOneWithAccessories(req.params.productId);
+    // console.log(product);
+
     res.render('details', { title: 'Details', product })
     
 });
