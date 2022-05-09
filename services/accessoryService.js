@@ -13,6 +13,10 @@ async function getAll() {
 
 }
 
+function getAllUnattached(ids) {
+    return Accessory.find({_id:{$nin: ids}}).lean() //$nin - mongoDb operators 
+}
+
 async function getOne(_id) {
     return await Accessory.findById(_id).lean();
 }
@@ -21,4 +25,5 @@ module.exports = {
     create,
     getAll,
     getOne,
+    getAllUnattached,
 }

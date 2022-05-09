@@ -6,8 +6,8 @@ router.get('/shopping/cart', (req, res) => {
     res.render('cart', { title: 'Cart' });
 });
 
-router.get('/shopping/checkout', (req, res) => {
-    res.render('checkout', {title: 'Checkout'});
-});
+// router.get('/shopping/checkout', (req, res) => {
+//     res.render('checkout', {title: 'Checkout'});
+// });
 
 module.exports = router;

@@ -21,6 +21,8 @@
                                 <div class="images">
                                 {{#each product.accessories}}
                                     {{>accessory}}
+                                    {{else}}
+                                    <h6 style="width: 350px;">Този продукт все още няма аксесоари</h3>
                                 {{/each}}
                                 </div>
                                 {{!-- End Accessories Galery --}}

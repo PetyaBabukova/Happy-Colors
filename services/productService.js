@@ -1,7 +1,7 @@
 const Accessory = require('../models/Accessory');
 const Product = require('../models/Product');
 
-async function getAll() {
+async function getAll(query) {
     let products = await Product.find({}).lean();
     // console.log(products);
 

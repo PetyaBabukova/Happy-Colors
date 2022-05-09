@@ -39,8 +39,8 @@ router.post('/products/:productId/details', (req, res)=>{
 });
 
 router.get('/products/:productId/attach', async (req, res)=>{
-    let product = await productService.getOne(req.params.productId);
-    let accessories = await accessoryService.getAll();
+    let product = await productService.getOneWithAccessories(req.params.productId); 
+    let accessories = await accessoryService.getAllUnattached(product.accessories);
     res.render('attachAccessory', {title: 'Attach accessory', product, accessories})
 });
 
