@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const config = require('./config');
 
 module.exports = (app) => {
-    mongoose.connect('mongodb://localhost:27017/happy-colors');
+    mongoose.connect(config.DB_CONNECTION);
 
     // this is from mongoose documentation:
     // main().catch(err => console.log(err));
