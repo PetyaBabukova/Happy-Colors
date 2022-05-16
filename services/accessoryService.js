@@ -6,7 +6,7 @@ function create(data) {
     return accessory.save();
 }
 
-async function getAll() {
+async function getAll(query) {
     let accessories = await Accessory.find({}).lean();
 
     return accessories;

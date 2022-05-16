@@ -6,7 +6,7 @@ const { validateProduct } = require('./helpers/productHelpers')
 const router = Router();
 
 router.get('/products', (req, res) => {
-    productService.getAll()
+    productService.getAll(req.query)
     .then(products => {
         res.render('product-grids', { title: 'Products', products });
        
@@ -41,7 +41,7 @@ router.post('/products/:productId/details', (req, res)=>{
 router.get('/products/:productId/attach', async (req, res)=>{
     let product = await productService.getOneWithAccessories(req.params.productId); 
     let accessories = await accessoryService.getAllUnattached(product.accessories);
-    res.render('attachAccessory', {title: 'Attach accessory', product, accessories})
+    res.render('attachAccessory', {title: 'Attach accessory', product, accessories});
 });
 
 router.post('/products/:productId/attach', (req, res)=>{

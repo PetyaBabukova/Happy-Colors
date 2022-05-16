@@ -1,7 +1,7 @@
 const config = {
     development: {
         PORT: process.env.PORT || 5000,
-        DB_CONNECTION: 'mongodb://localhost:27017/cubicle'
+        DB_CONNECTION: 'mongodb://localhost:27017/happy-colors'
     },
 
     production: {

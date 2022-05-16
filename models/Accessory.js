@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const accessoryScheme = new mongoose.Schema({
-    id: mongoose.Types.ObjectId,
     name: String,
-    mainImageUrl: String,
     description: String,
+    id: mongoose.Types.ObjectId,
+    mainImageUrl: String,
     price: Number
 });
 
