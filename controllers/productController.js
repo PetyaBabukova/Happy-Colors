@@ -5,7 +5,7 @@ const { validateProduct } = require('./helpers/productHelpers')
 
 const router = Router();
 
-router.get('/products', (req, res) => {
+router.get('/', (req, res) => {
     productService.getAll(req.query)
     .then(products => {
         res.render('product-grids', { title: 'Products', products });
@@ -15,17 +15,24 @@ router.get('/products', (req, res) => {
 
 });
 
-router.get('/products/create', (req, res) => {
+router.get('/create', (req, res) => {
     res.render('createProduct', { title: 'Create Product' })
 });
 
-router.post('/products/create', (req, res) => {
+router.get('/:category', (req, res)=>{
+    productService.getCategory(req.params.category)
+    .then((products)=>res.render('product-grids', { title: 'Products', products }))
+
+    
+})
+
+router.post('/create', (req, res) => {
     productService.create(req.body)
     .then(() => res.redirect('/products'))
     .catch(()=> res.status(500).end()) 
 });
 
-router.get('/products/:productId/details', async (req, res) => { 
+router.get('/:productId/details', async (req, res) => { 
     // console.log(req.params.productId);
     let product = await productService.getOneWithAccessories(req.params.productId);
     // console.log(product);
@@ -34,11 +41,11 @@ router.get('/products/:productId/details', async (req, res) => {
     
 });
 
-router.post('/products/:productId/details', (req, res)=>{
+router.post('/:productId/details', (req, res)=>{
     console.log(req.body);
 });
 
-router.get('/products/:productId/attach', async (req, res)=>{
+router.get('/:productId/attach', async (req, res)=>{
     let product = await productService.getOneWithAccessories(req.params.productId); 
     let accessories = await accessoryService.getAllUnattached(product.accessories);
     res.render('attachAccessory', {title: 'Attach accessory', product, accessories});

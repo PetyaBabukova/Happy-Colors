@@ -1,7 +1,7 @@
 const Accessory = require('../models/Accessory');
 const Product = require('../models/Product');
 
-async function getAll(query, category) {
+async function getAll(query) {
     let products = await Product.find({}).lean();
     let accessories = await Accessory.find({}).lean();
 
@@ -11,13 +11,14 @@ async function getAll(query, category) {
         accessories = accessories.filter(x => x.name.toLowerCase().includes(query.name.toLowerCase()))
         products.concat(accessories)
     }
-    
 
     return products.concat(accessories);
 
 }
 
-
+async function getCategory(category) {
+    return await Product.find({category : category}).lean();
+}
 
 function create(data) {
     let product = new Product(data);
@@ -51,5 +52,6 @@ module.exports = {
     create,
     attachAccessory,
     getOneWithAccessories,
+    getCategory
 
 }
