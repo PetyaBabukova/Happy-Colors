@@ -3,13 +3,8 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/', (req, res)=>{
-    res.redirect('/home')
     res.render('home', { title: 'Happy Colors' });
 })
-
-router.get('/home', (req, res) => {
-    res.render('home', { title: 'Happy Colors' });
-});
 
 router.get('/about', (req, res) => {
     res.render('about-us', { title: 'About Us' });

@@ -9,10 +9,10 @@ router.get('/', (req, res) => {
     productService.getAll(req.query)
     .then(products => {
         res.render('product-grids', { title: 'Products', products });
-       
+        
     })
     .catch(()=> res.status(500).end()) 
-
+    
 });
 
 router.get('/create', (req, res) => {

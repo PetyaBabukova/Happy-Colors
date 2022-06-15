@@ -4,20 +4,24 @@ const jwt = require('jsonwebtoken');
 const { SALT_ROUNDS, SECRET } = require('../config/config');
 const dotenv = require('dotenv').config();
 
-let create = async (username, password, email, phone) => {
-    // TODO: validate user exist
-    // let existingUser = await User.findOne({ username });
+let create = async (password, name, surname, email, phone) => {
+    // validate user exist
+    // let existingUser = await User.findOne({ email });
+
+    // if (existingUser) {
+    //     return {message: 'This e-mail is already in use!'};
+    // }
 
         let salt = await bcrypt.genSalt(SALT_ROUNDS);
         let hash = await bcrypt.hash(password, salt);
     
-        let user = new User({ username, password: hash, email, phone });
+        let user = new User({ email, password: hash, name, surname, phone });
         return user.save();
 }
 
-let login = async (username, password)=>{
+let login = async (email, password)=>{
     //find user
-    let user = await User.findOne ({username})
+    let user = await User.findOne ({email})
     if (!user) {
         throw {message: 'User not found'}        
     }

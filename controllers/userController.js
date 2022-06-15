@@ -10,15 +10,17 @@ router.get('/register', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    let { username, password, repeatPassword, email, phone } = req.body;
+    let {password, name, surname, email, phone, repeatPassword } = req.body;
+    console.log(`password: ${password}, name: ${name}, surname: ${surname}, email: ${email}, phone: ${phone}, repeatPassword: ${repeatPassword}`);
+
 
     if (password !== repeatPassword) {
         res.render('register', { message: 'Password missmatch' });
         return;
-    }
+    };
 
     try {
-        userService.create(username, password, email, phone)
+        userService.create(password, name, surname, email, phone)
             .then(() => res.redirect('/user/login'))
     }
     catch (error) {
@@ -32,11 +34,11 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
     try {
-        let token = await userService.login( username, password )
+        let token = await userService.login( email, password )
         res.cookie(COOKIE_NAME, token);
-        res.redirect('/products')
+        res.redirect('/products');
 
     } catch (error) {
         res.render('login', { error });
