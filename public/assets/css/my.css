@@ -102,6 +102,15 @@ body > main > div > div > div.cart-list-head > div.cart-single-list > div > div.
     width: 50%;
 }
 
+.registration-Btn{
+    padding: 0.7em;
+border-radius: 0.4em;
+border: none;
+background-color: #0167F3;
+color: white;
+font-weight: bold;
+}
+
 @media(min-width: 768px){
     .magnifying-glass{
         display: none;  

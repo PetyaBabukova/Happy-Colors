@@ -11,6 +11,7 @@ const userController = require('./controllers/userController');
 router.use( '/', otherController);
 router.use('/products', productController);
 router.use('/accessories', accessoryController);
+router.use('/user', userController);
 
 
 router.get('*', (req, res) => {

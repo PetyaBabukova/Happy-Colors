@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 
 const userScheme = new mongoose.Schema({
     id: mongoose.Types.ObjectId,
-    
-    name: {
+
+    password: {
         type: String,
         required: true
     },
-
-    surname: {
+    
+    username: {
         type: String,
         required: true
     },
@@ -25,15 +25,25 @@ const userScheme = new mongoose.Schema({
         // validate: /[0-9]{10}/
     },
 
-    address:{
-        type: String,
-        required: true,
-    },
+    // address:{
+    //     type: String,
+    //     required: true,
+    // },
 
-    cart: [{
+    currentPurchase: [{
         type: mongoose.Types.ObjectId,
         ref: 'Product'
-    }]
+    }],
+
+    oldPurchases:  [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Product'
+    }],
+
+    waitingProducts:  [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Product'
+    }],
 });
 
 userScheme.methods.connectData = function(){

@@ -1,0 +1,64 @@
+    <!-- Start Account Register Area -->
+    <main>
+    <div class="account-login section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+                    <div class="register-form">
+                        <div class="title">
+                            <h3>Регистрация</h3>
+                            <p>Регистрацията ще ви отнеме само минутка, но така ще имате пълен контрол върху поръчките си.</p>
+                        </div>
+                        <form action="/user/register" class="row" method="POST">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-fn">Име и фамилия</label>
+                                    <input class="form-control" type="text" id="reg-fn" required name="name">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-ln">username</label>
+                                    <input class="form-control" type="text" id="reg-ln" required name="username">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-email">е-mail</label>
+                                    <input class="form-control" type="email" id="reg-email" required name="email">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-phone">телефон</label>
+                                    <input class="form-control" type="text" id="reg-phone" required name="phone">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-pass">Парола</label>
+                                    <input class="form-control" type="password" id="reg-pass" required name="password">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="reg-pass-confirm">Повтори паролата</label>
+                                    <input class="form-control" type="password" id="reg-pass-confirm" required name="repeatPassword">
+                                </div>
+                            </div>
+                            {{#if error}}
+                            <span class="error">{{error.message}}</span>
+                            {{/if}}
+                            <div class="button">
+                                <input class="btn" type="submit" value="Регистрация"></input>
+                            </div>
+                            <p class="outer-link">Вече имате акаунт? Влезте в профила си   <a href="/user/login"> Вход</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- End Account Register Area -->
