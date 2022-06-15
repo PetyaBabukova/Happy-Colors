@@ -1,7 +1,8 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { SALT_ROUNDS, SECRET } = require('../config/config')
+const { SALT_ROUNDS, SECRET } = require('../config/config');
+const dotenv = require('dotenv').config();
 
 let create = async (username, password, email, phone) => {
     // TODO: validate user exist
@@ -28,7 +29,7 @@ let login = async (username, password)=>{
     }
 
     //generate token
-    let token = jwt.sign({_id: user._id, SECRET})
+    let token = jwt.sign({_id: user._id}, SECRET)
     return token;
 
 }

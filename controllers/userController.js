@@ -1,9 +1,7 @@
 const { Router } = require('express');
 const User = require('../models/User');
 const userService = require('../services/userService');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const { SALT_ROUNDS, SECRET } = require('../config/config')
+const { COOKIE_NAME} = require('../config/config');
 
 const router = Router();
 
@@ -35,35 +33,14 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
+    try {
+        let token = await userService.login( username, password )
+        res.cookie(COOKIE_NAME, token);
+        res.redirect('/products')
 
-    let user = await User.findOne({ username });
-    if (!user) {
-        throw { message: 'User not found!' }
+    } catch (error) {
+        res.render('login', { error });
     }
-
-    let isMatch = await bcrypt.compare(req.body.password, user.password)
-    if (!isMatch) {
-        throw { message: 'Password missmatch!'};
-    }
-
-    let token = await jwt.sign({_id: user._id, SECRET: 'polyBelyata'});
-    console.log(token);
-    res.send(user)
-
-
-
-    res.end();
-
-    // try {
-    //     let token = await userService.login({ username, password });
-    //     console.log(token);
-    //     // res.cookie(COOKIE_NAME, token);
-    //     // res.redirect('/products');
-
-    // } catch (error) {
-    //     console.log(error);
-    //     res.render('login', { error });
-    // }
 })
 
 // router.get('/checkout', (req, res) => {
