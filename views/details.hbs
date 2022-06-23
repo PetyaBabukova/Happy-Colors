@@ -68,25 +68,11 @@
                                     </div>
                                 </div>
                                 </br>
-                                <div class="row align-items-end">
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="wish-button">
-                                            <a href="/products" class="btn">Редактирай
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="wish-button">
+                                {{#if isAuthenticated}}
+                                            <a href="/products" class="btn">Редактирай</a>
                                             <a href="/products" class="btn">Изтрий </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="wish-button">
                                             <a href="/products/{{product._id}}/attach" class="btn">Добави аксесоар</a>
-                                        </div>
-                                    </div>
+                                    {{/if}}
                                 </div>
                             </div>
                         </div>

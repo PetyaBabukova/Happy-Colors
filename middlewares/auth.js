@@ -10,7 +10,9 @@ module.exports = function () {
                 if (err) {
                     res.clearCookie(COOKIE_NAME);
                 } else {
-                    req.user = decoded;
+                    req.user = decoded; 
+                    res.locals.user = decoded; //тук подава юзера, за да има хендълбарс достъп до него без да го подавам навсякъде.
+                    res.locals.isAuthenticated = true; 
                 }
             })
 

@@ -2,7 +2,6 @@ const { Router } = require('express');
 const productService = require('../services/productService');
 const accessoryService = require('../services/accessoryService');
 
-const { validateProduct } = require('./helpers/productHelpers');
 const isAuthenticated = require('../middlewares/isAuthenticated');
 const isGuest = require('../middlewares/isGuest');
 
