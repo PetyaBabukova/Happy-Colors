@@ -95,7 +95,9 @@
                         <div class="nav-hotline">
                             {{!-- <i class="lni lni-phone"></i> --}}
                         </div>
-                            <a href="/user/register" class="registration-Btn" type="button">Регистрация</a>
+                        <a href="/auth/register" class="registration-Btn" type="button">Регистрация</a>
+                        <a href="/auth/login" class="registration-Btn" type="button">Вход</a>
+                        <a href="/auth/logout" class="registration-Btn" type="button">Изход</a>
                         <div class="navbar-cart">
                             <div class="wishlist">
                                 <a href="javascript:void(0)">
@@ -114,7 +116,7 @@
                                         <span>2 продукта</span>
                                         <a href="/shopping/cart">Количка</a>
                                     </div>
-                                    <ul class="shopping-list">
+                                    {{!-- <ul class="shopping-list">
                                         <li>
                                             <a href="javascript:void(0)" class="remove" title="Remove this item"><i
                                                     class="lni lni-close"></i></a>
@@ -143,7 +145,7 @@
                                                 <p class="quantity">1x - <span class="amount">$35.00</span></p>
                                             </div>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                     <div class="bottom">
                                         <div class="total">
                                             <span>Сума</span>
@@ -206,6 +208,14 @@
                                 <li class="nav-item">
                                     <a href="/contacts" aria-label="Toggle navigation">Контакти</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/products/create" aria-label="Toggle navigation">Създай продукт</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="/accessories/create" aria-label="Toggle navigation">Създай аксесоар</a>
+                                </li>
+
                             </ul>
                         </div> <!-- navbar collapse -->
                     </nav>

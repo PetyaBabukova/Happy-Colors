@@ -1,17 +1,19 @@
 const { Router } = require('express');
-const router = Router();
 
 const otherController = require('./controllers/otherController');
 const productController = require('./controllers/productController');
-const shoppingController = require('./controllers/shoppingController');
 const accessoryController = require('./controllers/accessoryController');
-const userController = require('./controllers/userController');
+const authController = require('./controllers/authController');
+// const shoppingController = require('./controllers/shoppingController');
+// const userController = require('./controllers/userController');
 
+const router = Router();
 // router.use(otherController, productController, shoppingController, accessoryController, userController);
 router.use( '/', otherController);
+router.use('/auth', authController);
 router.use('/products', productController);
 router.use('/accessories', accessoryController);
-router.use('/user', userController);
+// router.use('/user', userController);
 
 
 router.get('*', (req, res) => {

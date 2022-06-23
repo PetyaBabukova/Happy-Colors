@@ -23,10 +23,7 @@ router.get('/order-success', (req, res) => {
 });
 
 router.get('/admin', (req, res) => {
-    res.render('adminPanel', {title: 'Admin'});
+    res.render('adminPanel');
 });
-
-
-
 
 module.exports = router;

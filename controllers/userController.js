@@ -1,49 +1,9 @@
 const { Router } = require('express');
 const User = require('../models/User');
-const userService = require('../services/userService');
-const { COOKIE_NAME} = require('../config/config');
+
 
 const router = Router();
 
-router.get('/register', (req, res) => {
-    res.render('register');
-});
-
-router.post('/register', async (req, res) => {
-    let {password, name, surname, email, phone, repeatPassword } = req.body;
-    console.log(`password: ${password}, name: ${name}, surname: ${surname}, email: ${email}, phone: ${phone}, repeatPassword: ${repeatPassword}`);
-
-
-    if (password !== repeatPassword) {
-        res.render('register', { message: 'Password missmatch' });
-        return;
-    };
-
-    try {
-        userService.create(password, name, surname, email, phone)
-            .then(() => res.redirect('/user/login'))
-    }
-    catch (error) {
-        res.render('register', { error });
-    }
-
-})
-
-router.get('/login', (req, res) => {
-    res.render('login');
-})
-
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-        let token = await userService.login( email, password )
-        res.cookie(COOKIE_NAME, token);
-        res.redirect('/products');
-
-    } catch (error) {
-        res.render('login', { error });
-    }
-})
 
 // router.get('/checkout', (req, res) => {
 //     res.render('checkout',  {title: 'Checkout'});
