@@ -69,9 +69,9 @@
                                 </div>
                                 </br>
                                 {{#if isAuthenticated}}
-                                            <a href="/products" class="btn">Редактирай</a>
-                                            <a href="/products" class="btn">Изтрий </a>
                                             <a href="/products/{{product._id}}/attach" class="btn">Добави аксесоар</a>
+                                            <a href="/products/{{product._id}}/edit" class="btn">Редактирай</a>
+                                            <a href="/products/{{product._id}}/delete" class="btn">Изтрий </a>
                                     {{/if}}
                                 </div>
                             </div>

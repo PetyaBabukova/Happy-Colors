@@ -1,0 +1,36 @@
+<!-- Start Account Register Area -->
+<main>
+    <div class="account-login section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+                    <div class="register-form">
+                        <div class="title">
+                            <h3>Изтриване</h3>
+                            </br>
+                            <p>Сигурни ли сте, че искате да изтриете този продукт?</p>
+                        </div>
+
+                        <form class="row" method="POST">
+                            <div class="button">
+                                <input class="btn" type="submit" value="Изтрий"></input>
+                            </div>
+                        </form>
+
+                        {{!-- Cancel with POST --}}
+                         {{!-- <form action="/products/{{_id}}/details" class="row" method="POST">
+                            <div class="button">
+                                 <input class="btn" type="submit" value="Отказ"></input>
+                            </div>
+                        </form> --}} 
+
+                            <div class="button">
+                                <a class="btn" href="/products/{{_id}}/details">Отказ</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- End Account Register Area -->

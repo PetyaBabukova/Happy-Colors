@@ -17,11 +17,12 @@ async function getAll(query) {
 }
 
 async function getCategory(category) {
-    return await Product.find({category : category}).lean();
+    return await Product.find({ category: category }).lean();
 }
 
-function create(data) {
-    let product = new Product(data);
+function create(data, userId) {
+    let product = new Product({ ...data, creator: userId });
+
     return product.save();
 };
 
@@ -44,6 +45,14 @@ async function attachAccessory(productId, accessoryId) {
     return product.save();
 }
 
+async function edit(productId, productData) {
+    return Product.updateOne({ _id: productId }, productData);
+}
+
+function deleteOne(productId) {
+    return Product.deleteOne({_id: productId})
+}
+
 
 
 module.exports = {
@@ -52,6 +61,8 @@ module.exports = {
     create,
     attachAccessory,
     getOneWithAccessories,
-    getCategory
+    getCategory,
+    edit,
+    deleteOne
 
 }

@@ -22,7 +22,7 @@ router.get('/create', isAuthenticated, (req, res) => {
 });
 
 router.post('/create', isAuthenticated, (req, res) => {
-    productService.create(req.body)
+    productService.create(req.body, req.user)
         .then(() => res.redirect('/products'))
         .catch(() => res.status(500).end())
 });
@@ -32,18 +32,16 @@ router.get('/:category', (req, res) => {
         .then((products) => res.render('product-grids', { title: 'Products', products }))
 })
 
-
 router.get('/:productId/details', async (req, res) => {
     // console.log(req.params.productId);
     let product = await productService.getOneWithAccessories(req.params.productId);
-    // console.log(product);
-
     res.render('details', { title: 'Details', product })
-
 });
 
-// router.post('/:productId/details', isAuthenticated, (req, res) => {
-//     console.log(req.body);
+// router.post('/:productId/details', async (req, res) => {
+//     // console.log(req.params.productId);
+//     let product = await productService.getOneWithAccessories(req.params.productId);
+//     res.render('details', { title: 'Details', product })
 // });
 
 router.get('/:productId/attach', isAuthenticated, async (req, res) => {
@@ -52,10 +50,43 @@ router.get('/:productId/attach', isAuthenticated, async (req, res) => {
     res.render('attachAccessory', { title: 'Attach accessory', product, accessories });
 });
 
-router.post('/products/:productId/attach', isAuthenticated, (req, res) => {
+router.post('/:productId/attach', isAuthenticated, (req, res) => {
     productService.attachAccessory(req.params.productId, req.body.accessory)
         .then(() => res.redirect(`/products/${req.params.productId}/details`))
 
+});
+
+router.get('/:productId/edit', isAuthenticated, (req, res) => {
+    productService.getOne(req.params.productId)
+        .then(product => {
+            res.render(`editProduct`, product);
+        })
+});
+
+router.post('/:productId/edit', isAuthenticated, (req, res) => {
+    productService.edit(req.params.productId, req.body)
+        .then(product => {
+            res.redirect(`/products/${req.params.productId}/details`)
+        })
+        .catch(err => console.log(err))
+});
+
+router.get('/:productId/delete', isAuthenticated, (req, res) => {
+    productService.getOne(req.params.productId)
+        .then(product => {
+            if (req.user._id != product.creator) {
+                res.redirect('/products')
+            } else {
+                res.render('delete', product);
+            }
+        })
+});
+
+router.post('/:productId/delete', isAuthenticated, (req, res) => {
+    productService.deleteOne(req.params.productId)
+        .then(response => {
+            res.redirect('/products')
+        })
 })
 
 module.exports = router;

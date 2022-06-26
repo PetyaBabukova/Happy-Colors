@@ -1,0 +1,26 @@
+<main>
+    <h2 style="margin-left: 0.5em">Edit Product</h2>
+    <div class="create-form">
+        <form method="POST">
+
+            <label for="name">Име:</label>
+            <input type="text" id="name" placeholder="Име" name="name" value={{name}} />
+
+            <label for="category">Категория:</label>
+            <input type="text" id="category" placeholder="Категория" name="category" value={{category}} />
+
+            <label for="description">Описание:</label>
+            <textarea id="description" placeholder="Описание" name="description">{{description}}</textarea>
+
+            <label for="imageMain">Изображение:</label>
+            <input type="text" id="imageMain" placeholder="imageUrl-Main" name="mainImageUrl" value={{mainImageUrl}}>
+
+            <input type="text" id="image1" placeholder="imageUrl1" name="imageUrl1" value={{imageUrl1}}>
+            <input type="text" id="image2" placeholder="imageUrl2" name="imageUrl2" value={{imageUrl2}}>
+
+            <label for="price">Цена:</label>
+            <input type="number" id="price" placeholder="Цена" name="price" value="{{price}}" />
+            <input type="submit" value="Edit ">
+        </form>
+    </div>
+</main>
